@@ -19,5 +19,13 @@ namespace CalculatorUnitTests
             Assert.AreEqual(expectedResult, actualResult);
 
         }
+
+        [Test]
+        public void TodayIsWednesdayTest()
+        {
+
+            Assert.AreEqual(DayOfWeek.Wednesday, DateTime.Today.DayOfWeek);
+
+        }
     }
 }
