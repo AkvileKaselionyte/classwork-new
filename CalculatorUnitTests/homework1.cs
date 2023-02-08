@@ -27,5 +27,21 @@ namespace CalculatorUnitTests
             Assert.AreEqual(DayOfWeek.Wednesday, DateTime.Today.DayOfWeek);
 
         }
+
+        [Test]
+        public void From1To10ThereAre4EvenNumbers()
+        {
+            int kiekis = 0;
+
+            for (int i = 1; i <= 10; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    kiekis++;
+                }
+            }
+
+            Assert.AreEqual(4, kiekis++);
+        }
     }
 }
