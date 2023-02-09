@@ -43,5 +43,13 @@ namespace CalculatorUnitTests
 
             Assert.AreEqual(4, kiekis++);
         }
+
+        [Test]
+        public void TestCurrentTIme()
+        {
+
+            Assert.AreEqual(13, DateTime.Now.Hour);
+
+        }
     }
 }
