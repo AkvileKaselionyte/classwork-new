@@ -41,7 +41,7 @@ namespace CalculatorUnitTests
                 }
             }
 
-            Assert.AreEqual(4, kiekis++);
+            Assert.AreEqual(4, kiekis);
         }
 
         [Test]
