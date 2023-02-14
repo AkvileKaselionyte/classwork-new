@@ -6,11 +6,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B70D6556-C19A-4751-A683-64D914085136}</ProjectGuid>
+    <ProjectGuid>{5C8C433F-6C68-448B-A785-CE5B13577A4A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CalculatorUnitTests</RootNamespace>
-    <AssemblyName>CalculatorUnitTests</AssemblyName>
+    <RootNamespace>SeleniumTestsWithoutPOM</RootNamespace>
+    <AssemblyName>SeleniumTestsWithoutPOM</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -40,33 +40,37 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.4.8.0\lib\net47\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.4.8.0\lib\net47\WebDriver.Support.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="homework1.cs" />
-    <Compile Include="UnitTests.cs" />
+    <Compile Include="SeleniumEasy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CalculatorNew\CalculatorNew.csproj">
-      <Project>{8fedc2da-c43b-4bc5-92f6-71c7e59f9784}</Project>
-      <Name>CalculatorNew</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Selenium.WebDriver.4.8.0\build\Selenium.WebDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.4.8.0\build\Selenium.WebDriver.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.4.8.0\build\Selenium.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.4.8.0\build\Selenium.WebDriver.targets'))" />
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.110.0.5481.7700\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.110.0.5481.7700\build\Selenium.WebDriver.ChromeDriver.targets'))" />
     <Error Condition="!Exists('..\packages\NUnit.3.13.3\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.13.3\build\NUnit.props'))" />
     <Error Condition="!Exists('..\packages\NUnit3TestAdapter.4.3.1\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.4.3.1\build\net35\NUnit3TestAdapter.props'))" />
   </Target>
+  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.110.0.5481.7700\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.110.0.5481.7700\build\Selenium.WebDriver.ChromeDriver.targets')" />
 </Project>
