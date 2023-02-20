@@ -12,6 +12,10 @@ namespace SeleniumFramework1.Pages.SeleniumEasy
         private static string fieldSingleCheckboxSuccessMessage = "//*[@id='txtAge']";
         private static string inputsMultipleCheckbox = "//*[@class='cb1-element']";
         private static string buttonMultipleCheckboxes = "//*[@id='check1']";
+        private static string fieldOption1 = "(//*[@class='checkbox']//*[@class='cb1-element'])[1]";
+        private static string fieldOption2 = "(//*[@class='checkbox']//*[@class='cb1-element'])[2]";
+        private static string fieldOption3 = "(//*[@class='checkbox']//*[@class='cb1-element'])[3]";
+        private static string fieldOption4 = "(//*[@class='checkbox']//*[@class='cb1-element'])[4]";
 
         public static void Open()
         {
@@ -37,5 +41,29 @@ namespace SeleniumFramework1.Pages.SeleniumEasy
         {
             return Common.GetAttributeValue(buttonMultipleCheckboxes, "value");
         }
+
+        // nd 3 uzdavinio
+
+        public static void ClickOption1()
+        {
+            Common.ClickElement(fieldOption1);
+        }
+
+        public static void ClickOption2()
+        {
+            Common.ClickElement(fieldOption2);
+        }
+
+        public static void ClickOption3()
+        {
+            Common.ClickElement(fieldOption3);
+        }
+
+        public static void ClickOption4()
+        {
+            Common.ClickElement(fieldOption4);
+        }
+
+     
     }
 }
