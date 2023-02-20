@@ -97,6 +97,13 @@ namespace SeleniumFramework1.Pages.SeleniumEasy
             }
         }
 
+        //2 uzdavinio
+
+        public static void ClickAllOptionsFields()
+        {
+            Common.ClickElements(inputsMultipleCheckbox);
+        }
+
 
         // nd 3 uzdavinio
 
@@ -119,7 +126,5 @@ namespace SeleniumFramework1.Pages.SeleniumEasy
         {
             Common.ClickElement(fieldOption4);
         }
-
-     
     }
 }

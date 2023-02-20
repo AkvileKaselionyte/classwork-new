@@ -52,6 +52,13 @@ namespace SeleniumTests1.SeleniumEasy
         }
 
         [Test]
+        public void MultipleCheckboxesHW2()
+        {
+            string expectedStatuses = "true";
+            string actualGetStatuses = "";
+        }
+
+        [Test]
         public void MultipleCheckboxesHW3()
         {
             string expectedButtonText = "Check All";
