@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SeleniumFramework1.Pages.DemoQA;
 
 namespace SeleniumTests1.SeleniumEasy
 {
@@ -38,6 +39,16 @@ namespace SeleniumTests1.SeleniumEasy
             string actualButtonText = CheckBoxDemo.GetMultipleCheckboxButtonText();
 
             Assert.AreEqual(expectedButtonText, actualButtonText);
+        }
+
+        [Test]
+        public void MultipleCheckboxesHW1()
+        {
+            CheckBoxDemo.ClickButtonMultipleCheckboxes();
+            Assert.IsTrue(CheckBoxDemo.IfOption1IsSelected());
+            Assert.IsTrue(CheckBoxDemo.IfOption2IsSelected());
+            Assert.IsTrue(CheckBoxDemo.IfOption3IsSelected());
+            Assert.IsTrue(CheckBoxDemo.IfOption4IsSelected());
         }
 
         [Test]

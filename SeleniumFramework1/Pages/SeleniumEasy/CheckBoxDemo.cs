@@ -42,6 +42,62 @@ namespace SeleniumFramework1.Pages.SeleniumEasy
             return Common.GetAttributeValue(buttonMultipleCheckboxes, "value");
         }
 
+        // 1 uzdavinio
+
+        public static void ClickButtonMultipleCheckboxes()
+        {
+            Common.ClickElement(buttonMultipleCheckboxes);
+        }
+
+        public static bool IfOption1IsSelected()
+        {
+            if (Common.IsElementSelected(fieldOption1))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool IfOption2IsSelected()
+        {
+            if (Common.IsElementSelected(fieldOption2))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool IfOption3IsSelected()
+        {
+            if (Common.IsElementSelected(fieldOption3))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool IfOption4IsSelected()
+        {
+            if (Common.IsElementSelected(fieldOption4))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
         // nd 3 uzdavinio
 
         public static void ClickOption1()

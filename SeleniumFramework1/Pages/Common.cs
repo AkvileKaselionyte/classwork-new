@@ -101,5 +101,12 @@ namespace SeleniumFramework1.Pages
         {
             return GetElement(locator).Enabled;
         }
+
+        public static bool IsElementSelected(string locator)
+        {
+            IWebElement element = GetElement(locator);
+            return element.Selected;
+        }
+
     }
 }
