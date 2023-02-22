@@ -164,7 +164,17 @@ namespace SeleniumFramework1.Pages
             actions.Perform();
         }
 
+        private static SelectElement GetSelectElement(string locator)
+        {
+            IWebElement element = GetElement(locator);
+            return new SelectElement(element);
+        }
 
+        internal static void SelectOptionByValue(string locator, string value)
+        {
+            SelectElement selectElement = GetSelectElement(locator);
+            selectElement.SelectByValue(value);
+        }
 
 
     }
