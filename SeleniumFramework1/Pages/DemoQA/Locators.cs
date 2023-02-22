@@ -28,5 +28,11 @@ namespace SeleniumFramework1.Pages.DemoQA
             internal static string messageLeftClick = "//*[@id='dynamicClickMessage']";
         }
 
+        internal class Tooltips
+        {
+            internal static string elementTooltip = "//*[@class='tooltip-inner']";
+            internal static string buttonHoverMeToSee = "//*[@id='toolTipButton']";
+        }
+
     }
 }
