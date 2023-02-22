@@ -51,50 +51,22 @@ namespace SeleniumFramework1.Pages.SeleniumEasy
 
         public static bool IfOption1IsSelected()
         {
-            if (Common.IsElementSelected(fieldOption1))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return Common.IsElementSelected(fieldOption1);
         }
 
         public static bool IfOption2IsSelected()
         {
-            if (Common.IsElementSelected(fieldOption2))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return Common.IsElementSelected(fieldOption2);
         }
 
         public static bool IfOption3IsSelected()
         {
-            if (Common.IsElementSelected(fieldOption3))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return Common.IsElementSelected(fieldOption3);
         }
 
         public static bool IfOption4IsSelected()
         {
-            if (Common.IsElementSelected(fieldOption4))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return Common.IsElementSelected(fieldOption4);
         }
 
         //2 uzdavinio
@@ -104,6 +76,10 @@ namespace SeleniumFramework1.Pages.SeleniumEasy
             Common.ClickElements(inputsMultipleCheckbox);
         }
 
+        public static List<bool> GetStatusOfAllCheckboxes()
+        {
+            return Common.GetMultipleElementSelectedStatus(inputsMultipleCheckbox);
+        }
 
         // nd 3 uzdavinio
 

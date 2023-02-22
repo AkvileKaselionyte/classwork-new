@@ -109,6 +109,23 @@ namespace SeleniumFramework1.Pages
             return element.Selected;
         }
 
-        
+        internal static List<bool> GetMultipleElementSelectedStatus(string locator)
+        {
+            List<IWebElement> elements = GetElements(locator);
+            List<bool> statuses = new List<bool>();
+
+            foreach (IWebElement element in elements)
+            {
+                statuses.Add(element.Selected);
+            }
+
+            return statuses;
+        }
+
+        internal static void WaitForElementToNotContainText(string locator, string textToNotBePresent)
+        {
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
+            wait.Until(d => !d.FindElement(By.XPath(locator)).Text.Contains(textToNotBePresent));
+        }
     }
 }

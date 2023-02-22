@@ -44,18 +44,28 @@ namespace SeleniumTests1.SeleniumEasy
         [Test]
         public void MultipleCheckboxesHW1()
         {
-            CheckBoxDemo.ClickButtonMultipleCheckboxes();
+            CheckBoxDemo.ClickButtonMultipleCheckboxes();                      // paspaudzia ir patikrina ar pazymetas
             Assert.IsTrue(CheckBoxDemo.IfOption1IsSelected());
             Assert.IsTrue(CheckBoxDemo.IfOption2IsSelected());
             Assert.IsTrue(CheckBoxDemo.IfOption3IsSelected());
             Assert.IsTrue(CheckBoxDemo.IfOption4IsSelected());
+
+            CheckBoxDemo.ClickButtonMultipleCheckboxes();                   // vel paspaudzia, tai reiškia atžymi ir patikrina ar nepazymetas isFalse
+            Assert.IsFalse(CheckBoxDemo.IfOption1IsSelected());
+            Assert.IsFalse(CheckBoxDemo.IfOption2IsSelected());
+            Assert.IsFalse(CheckBoxDemo.IfOption3IsSelected());
+            Assert.IsFalse(CheckBoxDemo.IfOption4IsSelected());
         }
 
         [Test]
         public void MultipleCheckboxesHW2()
         {
-            string expectedStatuses = "true";
-            string actualGetStatuses = "";
+            List<bool> statuses = CheckBoxDemo.GetStatusOfAllCheckboxes();
+
+            foreach (bool status in statuses)
+            {
+                Assert.IsFalse(status);
+            }
         }
 
         [Test]

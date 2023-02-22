@@ -22,10 +22,11 @@ namespace SeleniumTests1.SeleniumEasy
         [Test]
         public void LoadingTheDataDynamically()
         {
-            DynamicDataLoading.ClickButtonGetNewUser();
-            DynamicDataLoading.WaitForImageToBeVisible();
-            Assert.IsTrue(DynamicDataLoading.GetFirstNameMessage());
-            Assert.IsTrue(DynamicDataLoading.GetLastNameMessage());
+            DynamicDataLoading.ClickGetNewUserButton();
+            string userInformation = DynamicDataLoading.GetUserInformation();
+
+            Assert.IsTrue(userInformation.Contains("First Name : "));
+            Assert.IsTrue(userInformation.Contains("Last Name : "));
         }
 
         [TearDown]

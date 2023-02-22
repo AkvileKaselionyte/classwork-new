@@ -17,43 +17,18 @@ namespace SeleniumFramework1.Pages.SeleniumEasy
         {
             Driver.OpenUrl("https://demo.seleniumeasy.com/dynamic-data-loading-demo.html");
         }
-
-        public static void ClickButtonGetNewUser()
+        public static void ClickGetNewUserButton()
         {
-            Common.ClickElement(buttonGetNewUser);
+            string locator = "//*[@id='save']";
+            Common.ClickElement(locator);
         }
 
-        public static void WaitForImageToBeVisible()
+        public static string GetUserInformation()
         {
-            Common.WaitForElementToBeVisible(image);
-        }
-
-        public static bool GetFirstNameMessage()
-        {
-            string attributeText = Common.GetAttributeValue(image, "text");
-
-            if (attributeText.Contains("First Name :"))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        public static bool GetLastNameMessage()
-        {
-            string attributeText = Common.GetAttributeValue(image, "text");
-
-            if (attributeText.Contains("Last Name :"))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            string locator = "//*[@id='loading']";
+            Common.WaitForElementToNotContainText(locator, "loading...");
+            return Common.GetElementText(locator);
         }
     }
+    
 }
