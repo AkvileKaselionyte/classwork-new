@@ -17,5 +17,16 @@ namespace SeleniumFramework1.Pages.DemoQA
         internal static string outputEmail = "//*[@id='output']//*[@id='email']";
         internal static string outputCurrentAddress = "//*[@id='output']//*[@id='currentAddress']";
         internal static string outputPermanentAddress = "//*[@id='output']//*[@id='permanentAddress']";
+
+        internal class Buttons
+        {
+            internal static string buttonDoubleClick = "//*[@id='doubleClickBtn']";
+            internal static string buttonRightClick = "//*[@id='rightClickBtn']";
+            internal static string buttonLeftClick = "//*[text()='Click Me']";
+            internal static string messageDoubleClick = "//*[@id='doubleClickMessage']";
+            internal static string messageRightClick = "//*[@id='rightClickMessage']";
+            internal static string messageLeftClick = "//*[@id='dynamicClickMessage']";
+        }
+
     }
 }

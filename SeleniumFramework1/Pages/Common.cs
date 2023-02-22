@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
@@ -126,6 +127,33 @@ namespace SeleniumFramework1.Pages
         {
             WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
             wait.Until(d => !d.FindElement(By.XPath(locator)).Text.Contains(textToNotBePresent));
+        }
+
+        internal static void DoubleClickElement(string locator)
+        {
+            Actions actions = new Actions(Driver.GetDriver());
+            IWebElement element = GetElement(locator);
+
+            actions.DoubleClick(element);
+            actions.Perform();
+        }
+
+        internal static void RightClickElement(string locator)
+        {
+            Actions actions = new Actions(Driver.GetDriver());
+            IWebElement element = GetElement(locator);
+
+            actions.ContextClick(element);
+            actions.Perform();
+        }
+
+        internal static void LeftClickElement(string locator)
+        {
+            Actions actions = new Actions(Driver.GetDriver());
+            IWebElement element = GetElement(locator);
+
+            actions.Click(element);
+            actions.Perform();
         }
     }
 }

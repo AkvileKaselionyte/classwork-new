@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SeleniumTests1.BaseTests
 {
-    internal class BaseTests
+    internal class BaseTest
     {
         [SetUp]
         public void SetUp()
