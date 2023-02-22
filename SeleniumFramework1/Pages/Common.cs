@@ -176,6 +176,16 @@ namespace SeleniumFramework1.Pages
             selectElement.SelectByValue(value);
         }
 
+        internal static void SelectOptionByText(string locator, string text)
+        {
+            SelectElement selectElement = GetSelectElement(locator);
+            selectElement.SelectByText(text);
+        }
+
+        internal static string GetAlertText()
+        {
+            return Driver.GetDriver().SwitchTo().Alert().Text;
+        }
 
     }
 }
